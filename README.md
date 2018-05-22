@@ -1,4 +1,8 @@
-# idid
+# idid / macroless
+
+This version of the IDID library dose not use macros which of course
+leads to a very little more boilerplate implementation when you create 
+new Id's. See Tests !!!
 
 `idid` is a common interface for different Id types. It allows you to
 define distinct types for each of your Id types, even though they might

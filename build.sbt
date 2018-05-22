@@ -1,5 +1,5 @@
 lazy val commonSettings = Seq(
-  version := "0.2.0",
+  version := "0.2.1",
   scalaVersion := "2.12.0",
   crossScalaVersions := Seq("2.11.8", "2.12.0"),
   organization := "com.unstablebuild",
@@ -39,17 +39,6 @@ lazy val commonSettings = Seq(
 
 lazy val root = project.in(file("."))
   .settings(commonSettings: _*)
-  .dependsOn(macros)
   .settings(
     name := "idid"
-  )
-
-lazy val macros = project.in(file("macros"))
-  .settings(commonSettings: _*)
-  .settings(
-    name := "idid-macros",
-    libraryDependencies ++= Seq(
-      "com.typesafe" % "config" % "1.3.0",
-      "org.scala-lang" % "scala-reflect" % scalaVersion.value
-    )
   )

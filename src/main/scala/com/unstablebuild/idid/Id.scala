@@ -1,9 +1,5 @@
 package com.unstablebuild.idid
 
-import com.unstablebuild.idid.factory.{AutoIdFactory, IdFactory}
-
-import scala.language.experimental.macros
-
 trait Id {
 
   type UID
@@ -21,15 +17,4 @@ trait Id {
 
 }
 
-object Id extends IdFunctions {
-
-  def factory[T <: Id]: IdFactory[T] =
-    macro Macros.factoryImpl[T]
-
-}
-
-trait TypedId[T] extends Id {
-
-  override type UID = T
-
-}
+object Id extends IdFunctions
